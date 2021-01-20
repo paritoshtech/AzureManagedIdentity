@@ -1,0 +1,22 @@
+{
+  "name": "azureManagedIdentity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "getConn.js",
+  "scripts": {
+    "test": "node getConn.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paritoshtech/AzureManagedIdentity.git"
+  },
+  "author": "paritosh.tech@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paritoshtech/AzureManagedIdentity/issues"
+  },
+  "homepage": "https://github.com/paritoshtech/AzureManagedIdentity#readme",
+  "dependencies": {
+    "azure": "^2.3.1-preview"
+  }
+}
