@@ -276,3 +276,23 @@ spec:
           path: /etc/kubernetes/azure.json
       nodeSelector:
         kubernetes.io/os: linux
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      bb: web
+  template:
+    metadata:
+      labels:
+        bb: web
+    spec:
+      containers:
+      - name: db-conn
+        image: dtlpacr.azurecr.io/datachain/dbconn:latest
+        imagePullPolicy: Always
