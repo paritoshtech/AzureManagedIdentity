@@ -1,12 +1,14 @@
 const azi = require('@azure/identity');
 const pg = require('pg');
-const creds = new azi.ManagedIdentityCredential();
 
 async function connectToDB()
 {
+    const clientId=process.argv[2]
+    const creds = new azi.ManagedIdentityCredential(clientId=clientId);
 
+    console.log("clientId ",clientId)
 
-let tokenJson = await creds.getToken('https://ossrdbms-aad.database.windows.net')
+let tokenJson = await creds.getToken("https://ossrdbms-aad.database.windows.net")
 
 
 console.log("Got the token ",tokenJson.token)
