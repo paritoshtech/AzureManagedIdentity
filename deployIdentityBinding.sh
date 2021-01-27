@@ -1,0 +1,9 @@
+cat <<EOF | kubectl apply -f -
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: ${IDENTITY_NAME}-binding
+spec:
+  azureIdentity: ${IDENTITY_NAME}
+  selector: ${IDENTITY_NAME}
+EOF
